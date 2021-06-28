@@ -2,13 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap');
 
 
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-$color-quaternary: #353535;
+$color-01: #9356DC;
+$color-02: #FF79DA;
+$color-03: #99E2D0;
+$color-04: #000000;
+
+$font-logo: shrikhand, cursive;
+$font: Roboto, sans-serif;
 
 $load-bar-dur: 1000ms;
 $load-bar-delay: 1000ms;
+
+@mixin bouton {
+    text-decoration: none;
+    font-family: $font;
+    font-weight: 700;
+    color: lighten($color-04, 100);
+    background: linear-gradient(-5deg, $color-01 20%, $color-02);
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: lighten($color-04, 70) 0 5px 10px;
+    &:hover {
+        background: linear-gradient(-5deg, lighten($color-01, 5) 20%, lighten($color-02, 5));
+        box-shadow: lighten($color-04, 60) 0 5px 10px;
+    }
+}
 
 .ohmyfood {
     width: 100%;
@@ -19,13 +37,13 @@ $load-bar-delay: 1000ms;
     width: 89%;
     height: 50px;
     margin: 80% 5%;
-    border: 2px solid $color-primary;
+    border: 2px solid $color-01;
     position: absolute;
     z-index: 2;
     &__bar {
         height: 40px;
         margin: 5px;
-        background-color: $color-secondary;
+        background-color: $color-02;
         transform-origin: left;
         transform: scaleX(0.5);
         animation: loading-bar $load-bar-dur $load-bar-delay;
@@ -61,9 +79,294 @@ $load-bar-delay: 1000ms;
 }
 
 h1 {
-    font-family: shrikhand, cursive;
+    font-family: $font-logo;
     font-size: 30px;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px 0 15px 0;
     padding: 0;
+}
+
+.localisation {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(lighten($color-04, 80) 0%, lighten($color-04, 90) 15%);
+    color: lighten($color-04, 20);
+    p {
+        margin: 0;
+        width: 150px;
+    }
+    input {
+        color: lighten($color-04, 20);
+        border: none;
+        background-color: transparent;
+        margin-left: 15px;
+        font-family: $font;
+        font-weight: 400;
+        font-size: 16px;
+        &:focus {
+            outline-style: none;
+        }
+    }
+}
+
+h2 {
+    font-family: $font;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    color: $color-04;
+    margin: 0;
+}
+
+#introduction {
+    height: 285px;
+    background-color: lighten($color-04, 95);
+    text-align: center;
+    h2 {
+        padding-top: 40px;
+    }
+    p {
+        font-family: $font;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 21px;
+        color: lighten($color-04, 20);
+        margin: 0;
+        padding: 20px 0 40px 0;
+    }
+    a {
+        @include bouton();
+    }
+}
+
+#fonctionnement {
+    height: 440px;
+    margin: 0 5%;
+    h2 {
+        padding: 50px 0 10px 0;
+    }
+    @media (min-width: 1024px) {
+        display: flex;
+        justify-content: space-between;
+        height: 250px;
+        h2 {
+            position: absolute;
+            padding: 40px 0 10px 0;
+        }
+    }
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    @media (min-width: 1024px) {
+        width: 30%;
+        margin-top: 50px;
+    }
+    .cercle {
+        background-color: $color-01;
+        width: 25px;
+        height: 25px;
+        border-radius: 25px;
+        position: absolute;
+        z-index: 2;
+        
+    }
+    p {
+        margin: 15% 0;
+        font-family: $font;
+        font-size: 15px;
+        font-weight: 400;
+        text-align: center;
+        color: lighten($color-04, 100);
+    }
+    &-bloc {
+        display: flex;
+        align-items: center;
+        width: 98%;
+        height: 75px;
+        margin-left: 12.5px;
+        background-color: lighten($color-04, 98);
+        border-radius: 20px;
+        box-shadow: lighten($color-04, 70) 0 5px 10px;
+        position: relative;
+        z-index: 1;
+        i {
+            width: 20px;
+            color: lighten($color-04, 50);
+            margin-left: 30px;
+        }
+        p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 400;
+            color: $color-04;
+            margin-left: 20px;
+        }
+        &-final {
+            background-color: lighten($color-01, 35);
+            i {
+                color: $color-01;
+            }
+        }
+    }
+}
+
+#restaurants {
+    height: 1230px;
+    background-color: lighten($color-04, 95);
+}
+
+.choix-resto {
+    margin: 0 5%;
+    h2 {
+        padding: 60px 0 15px 0;
+    }
+    a {
+        text-decoration: none;
+        color: $color-04;
+        font-family: $font;
+    }
+}
+
+.propal-resto {
+    display: flex;
+    flex-direction: column;
+}
+
+.resto {
+    height: 250px;
+    border-radius: 20px;
+    background-color: lighten($color-04, 100);
+    margin: 20px 0 0 0; padding: 0;
+    box-shadow: lighten($color-04, 70) 0 0 10px;
+    &-crop {
+        position: relative;
+        z-index: 1;
+        height: 175px;
+        overflow: hidden;
+        border-radius: 15px 15px 0 0;
+        img {
+            width: 105%;
+            min-width: 220px;
+            transform: translate(-2%, -25%);
+        }
+        &-vertical {
+            img {
+                transform: translate(-2%, -37%);
+            }
+        }
+    }
+    &-new {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        justify-content: flex-end;
+        p {
+            margin: 10px;
+            padding: 7px 12.5px;
+            background-color: $color-03;
+            border-radius: 3px;
+            font-family: $font;
+            font-size: 14px;
+            font-weight: 700;
+            color: darken($color-03, 40);
+        }
+    }
+    &-info {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px 0 10px;
+        &-txt {
+            h3 {
+                margin: 0;
+                font-size: 18px;
+                font-weight: 700;
+            }
+            p {
+                margin: 0;
+                padding-top: 5px;
+                font-size: 17px;
+                font-weight: 300;
+            }
+        }
+        &-fav {
+            font-size: 20px;
+            padding-top: 10px;
+        }
+    }
+}
+
+.empty-heart {
+    color: $color-04;
+    position: absolute;
+    z-index: 1;
+    
+    &:hover {
+        opacity: 0;
+        color: $color-01;
+        + .full-heart i {
+            background: linear-gradient(to top, $color-02, $color-01, transparent 50%);
+            background-clip: text;
+            animation: heart 0.75s both;
+            background-size: auto 60px;
+        }
+    }
+}
+
+.full-heart i {
+    position: relative;
+    opacity: 1;
+    color: transparent;
+}
+
+@keyframes heart{
+    0% {
+        background-position: top;
+    }
+
+    100% {
+        background-position: bottom;
+    }
+}
+
+footer {
+    background-color: lighten($color-04, 20);
+    height: 195px;
+    font-family: $font;
+    font-size: 16px;
+    color: lighten($color-04, 100);
+    h4 {
+        font-family: $font-logo;
+        font-size: 18px;
+        padding: 20px 5% 5px 5%;
+        margin: 0;
+    }
+    p {
+        margin: 0;
+        padding: 10px 5%;
+    }
+    a {
+        margin: 0;
+        text-decoration: none;
+        color: lighten($color-04, 100);
+        padding: 15px 5% 0 5%;
+    }
+}
+
+.footer-info {
+    display: flex;
+    font-weight: 700;
+    padding: 10px 5% 0 5%;
+    p {
+        padding: 0;
+    }
+    i {
+        width: 20px;
+        padding-right: 10px;
+    }
 }

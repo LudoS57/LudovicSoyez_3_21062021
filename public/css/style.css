@@ -9,13 +9,13 @@
     width: 89%;
     height: 50px;
     margin: 80% 5%;
-    border: 2px solid $color-primary;
+    border: 2px solid $color-01;
     position: absolute;
     z-index: 2;
     &__bar {
         height: 40px;
         margin: 5px;
-        background-color: $color-secondary;
+        background-color: $color-02;
         transform-origin: left;
         transform: scaleX(0.5);
         animation: loading-bar $load-bar-dur $load-bar-delay;
@@ -53,8 +53,301 @@ h1 {
   font-family: shrikhand, cursive;
   font-size: 30px;
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 0 15px 0;
   padding: 0;
+}
+
+.localisation {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#cccccc 0%, #e6e6e6 15%);
+  color: #333333;
+}
+.localisation p {
+  margin: 0;
+  width: 150px;
+}
+.localisation input {
+  color: #333333;
+  border: none;
+  background-color: transparent;
+  margin-left: 15px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.localisation input:focus {
+  outline-style: none;
+}
+
+h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #000000;
+  margin: 0;
+}
+
+#introduction {
+  height: 285px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+#introduction h2 {
+  padding-top: 40px;
+}
+#introduction p {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 21px;
+  color: #333333;
+  margin: 0;
+  padding: 20px 0 40px 0;
+}
+#introduction a {
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(-5deg, #9356DC 20%, #FF79DA);
+  padding: 15px 25px;
+  border-radius: 25px;
+  box-shadow: #b3b3b3 0 5px 10px;
+}
+#introduction a:hover {
+  background: linear-gradient(-5deg, #a16be0 20%, #ff93e1);
+  box-shadow: #999999 0 5px 10px;
+}
+
+#fonctionnement {
+  height: 440px;
+  margin: 0 5%;
+}
+#fonctionnement h2 {
+  padding: 50px 0 10px 0;
+}
+@media (min-width: 1024px) {
+  #fonctionnement {
+    display: flex;
+    justify-content: space-between;
+    height: 250px;
+  }
+  #fonctionnement h2 {
+    position: absolute;
+    padding: 40px 0 10px 0;
+  }
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+@media (min-width: 1024px) {
+  .step {
+    width: 30%;
+    margin-top: 50px;
+  }
+}
+.step .cercle {
+  background-color: #9356DC;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  position: absolute;
+  z-index: 2;
+}
+.step p {
+  margin: 15% 0;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+}
+.step-bloc {
+  display: flex;
+  align-items: center;
+  width: 98%;
+  height: 75px;
+  margin-left: 12.5px;
+  background-color: #fafafa;
+  border-radius: 20px;
+  box-shadow: #b3b3b3 0 5px 10px;
+  position: relative;
+  z-index: 1;
+}
+.step-bloc i {
+  width: 20px;
+  color: gray;
+  margin-left: 30px;
+}
+.step-bloc p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  margin-left: 20px;
+}
+.step-bloc-final {
+  background-color: #f2eafb;
+}
+.step-bloc-final i {
+  color: #9356DC;
+}
+
+#restaurants {
+  height: 1230px;
+  background-color: #f2f2f2;
+}
+
+.choix-resto {
+  margin: 0 5%;
+}
+.choix-resto h2 {
+  padding: 60px 0 15px 0;
+}
+.choix-resto a {
+  text-decoration: none;
+  color: #000000;
+  font-family: Roboto, sans-serif;
+}
+
+.propal-resto {
+  display: flex;
+  flex-direction: column;
+}
+
+.resto {
+  height: 250px;
+  border-radius: 20px;
+  background-color: white;
+  margin: 20px 0 0 0;
+  padding: 0;
+  box-shadow: #b3b3b3 0 0 10px;
+}
+.resto-crop {
+  position: relative;
+  z-index: 1;
+  height: 175px;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+}
+.resto-crop img {
+  width: 105%;
+  min-width: 220px;
+  transform: translate(-2%, -25%);
+}
+.resto-crop-vertical img {
+  transform: translate(-2%, -37%);
+}
+.resto-new {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+.resto-new p {
+  margin: 10px;
+  padding: 7px 12.5px;
+  background-color: #99E2D0;
+  border-radius: 3px;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #278870;
+}
+.resto-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px 0 10px;
+}
+.resto-info-txt h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.resto-info-txt p {
+  margin: 0;
+  padding-top: 5px;
+  font-size: 17px;
+  font-weight: 300;
+}
+.resto-info-fav {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.empty-heart {
+  color: #000000;
+  position: absolute;
+  z-index: 1;
+}
+.empty-heart:hover {
+  opacity: 0;
+  color: #9356DC;
+}
+.empty-heart:hover + .full-heart i {
+  background: linear-gradient(to top, #FF79DA, #9356DC, transparent 50%);
+  background-clip: text;
+  animation: heart 0.75s both;
+  background-size: auto 60px;
+}
+
+.full-heart i {
+  position: relative;
+  opacity: 1;
+  color: transparent;
+}
+
+@keyframes heart {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+footer {
+  background-color: #333333;
+  height: 195px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: white;
+}
+footer h4 {
+  font-family: shrikhand, cursive;
+  font-size: 18px;
+  padding: 20px 5% 5px 5%;
+  margin: 0;
+}
+footer p {
+  margin: 0;
+  padding: 10px 5%;
+}
+footer a {
+  margin: 0;
+  text-decoration: none;
+  color: white;
+  padding: 15px 5% 0 5%;
+}
+
+.footer-info {
+  display: flex;
+  font-weight: 700;
+  padding: 10px 5% 0 5%;
+}
+.footer-info p {
+  padding: 0;
+}
+.footer-info i {
+  width: 20px;
+  padding-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
