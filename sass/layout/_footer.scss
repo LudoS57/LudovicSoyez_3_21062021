@@ -1,0 +1,52 @@
+footer {
+    background-color: lighten($color-04, 25);
+    height: 210px;
+    font-family: $font;
+    font-size: 16px;
+    color: lighten($color-04, 100);
+    @media (min-width: 800px) {
+        height: auto;
+        padding-bottom: 40px;
+    }
+    h4 {
+        font-family: $font-logo;
+        font-size: 18px;
+        padding: 20px 5% 10px 5%;
+        margin: 0;
+    }
+}
+
+.menu {
+    padding: 0 5%;
+    p {
+        margin: 0;
+        padding: 10px 0;
+    }
+    a {
+        margin: 0;
+        text-decoration: none;
+        color: lighten($color-04, 100);
+    }
+    &-info {
+    display: flex;
+    font-weight: 700;
+    padding-top: 10px;
+    p {
+        padding: 0;
+    }
+    i {
+        width: 20px;
+        padding-right: 10px;
+    }
+    }
+    @media (min-width: 800px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        &-info{
+            padding-top: 0;
+        }
+    }
+}

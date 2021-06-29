@@ -1,0 +1,7 @@
+.empty-heart {
+    @include empty-heart;
+}
+
+.full-heart i {
+    @include full-heart;
+}
