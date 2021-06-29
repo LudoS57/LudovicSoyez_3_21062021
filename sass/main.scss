@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap');
 
@@ -10,8 +12,10 @@ $color-04: #000000;
 $font-logo: shrikhand, cursive;
 $font: Roboto, sans-serif;
 
-$load-bar-dur: 1000ms;
-$load-bar-delay: 1000ms;
+$load-dur: 2.5s;
+$num-bars: 3;
+$load-delay: math.div($load-dur, $num-bars);
+$start-delay: $load-dur + $load-delay + 0.5s;
 
 @mixin bouton {
     text-decoration: none;
@@ -33,50 +37,86 @@ $load-bar-delay: 1000ms;
     margin: 0;
 }
 
-/*.loading {
-    width: 89%;
-    height: 50px;
-    margin: 80% 5%;
-    border: 2px solid $color-01;
+.loading {
+    width: 100%;
+    margin-top: 150px;
     position: absolute;
-    z-index: 2;
-    &__bar {
-        height: 40px;
-        margin: 5px;
-        background-color: $color-02;
-        transform-origin: left;
-        transform: scaleX(0.5);
-        animation: loading-bar $load-bar-dur $load-bar-delay;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    &-bar {
+        height: 200px;
+        width: 50px;
+        margin: 0;
+        z-index: 2;
+        transform-origin: bottom;
+        transform: scaleY(0.5);
+        animation: loading-bar $load-dur;
         animation-fill-mode: both;
+        @for $i from 1 through $num-bars {
+            &-#{$i} {
+                animation-delay: $load-delay * $i;
+            }
+        }
+        &-1 {
+            background-color: $color-01;
+        }
+        &-2 {
+            background-color: $color-02;
+        }
+        &-3 {
+            background-color: $color-03;
+        }
     }
+    h1 {
+        position: absolute;
+        z-index: 4;
+        margin-top: 210px;
+    }
+}
+
+.app {
+    width: 200px;
+    position: absolute;
+    z-index: 3;
 }
 
 @keyframes loading-bar{
     0% {
-        transform: scaleX(0);
+        transform: scaleY(0);
         opacity: .1;
     }
     17% {
-        transform: scaleX(.18);
+        transform: scaleY(.18);
     }
     24% {
-        transform: scaleX(.4);
+        transform: scaleY(.4);
     }
     46% {
-        transform: scaleX(.81);
+        transform: scaleY(.81);
     }
     85%,100% {
         opacity: 1;
     }
     100% {
-        transform: scaleX(1);
+        transform: scaleY(1);
     }
-}*/
+}
 
 .website {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 5;
+    animation: start 1s $start-delay both;
 }
+/*
+@keyframes start{
+    0% {
+        transform: translateX(-9999px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}*/
 
 h1 {
     font-family: $font-logo;
@@ -147,7 +187,7 @@ h2 {
     h2 {
         padding: 50px 0 10px 0;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 800px) {
         display: flex;
         justify-content: space-between;
         height: 250px;
@@ -163,10 +203,6 @@ h2 {
     align-items: center;
     width: 100%;
     margin-top: 20px;
-    @media (min-width: 1024px) {
-        width: 30%;
-        margin-top: 50px;
-    }
     .cercle {
         background-color: $color-01;
         width: 25px;
@@ -214,11 +250,29 @@ h2 {
             }
         }
     }
+    @media (min-width: 800px) {
+        width: 30%;
+        margin-top: 50px;
+        &-bloc {
+            justify-content: space-between;
+            i {
+                margin-left: 15%;
+            }
+            p {
+                width: 80%;
+                margin: 0 5px 0 0;
+            }
+        }
+    }
 }
 
 #restaurants {
     height: 1230px;
     background-color: lighten($color-04, 95);
+    @media (min-width: 800px) {
+        height: auto;
+        padding-bottom: 40px;
+    }
 }
 
 .choix-resto {
@@ -231,11 +285,24 @@ h2 {
         color: $color-04;
         font-family: $font;
     }
+    @media (min-width: 800px) {
+        h2 {
+            padding: 40px 0 15px 0;
+        }
+        a {
+            width: 48.5%;
+        }
+    }
 }
 
 .propal-resto {
     display: flex;
     flex-direction: column;
+    @media (min-width: 800px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
 
 .resto {
@@ -252,8 +319,10 @@ h2 {
         border-radius: 15px 15px 0 0;
         img {
             width: 105%;
-            min-width: 220px;
             transform: translate(-2%, -25%);
+            @media (min-width: 600px) and (max-width: 799px) {
+                transform: translate(-2%, -35%);
+            }
         }
         &-vertical {
             img {
@@ -266,6 +335,10 @@ h2 {
         z-index: 2;
         display: flex;
         justify-content: flex-end;
+        width: 90%;
+        @media (min-width: 800px) {
+            width: 43.5%;
+        }
         p {
             margin: 10px;
             padding: 7px 12.5px;
@@ -304,7 +377,7 @@ h2 {
 .empty-heart {
     color: $color-04;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     
     &:hover {
         opacity: 0;
@@ -320,6 +393,7 @@ h2 {
 
 .full-heart i {
     position: relative;
+    z-index: 1;
     opacity: 1;
     color: transparent;
 }
@@ -335,11 +409,14 @@ h2 {
 }
 
 footer {
-    background-color: lighten($color-04, 20);
+    background-color: lighten($color-04, 25);
     height: 195px;
     font-family: $font;
     font-size: 16px;
     color: lighten($color-04, 100);
+    @media (min-width: 800px) {
+        text-align: center;
+    }
     h4 {
         font-family: $font-logo;
         font-size: 18px;
@@ -362,6 +439,9 @@ footer {
     display: flex;
     font-weight: 700;
     padding: 10px 5% 0 5%;
+    @media (min-width: 800px) {
+        justify-content: center;
+    }
     p {
         padding: 0;
     }
