@@ -1,0 +1,105 @@
+#restaurants {
+    height: 1230px;
+    background-color: lighten($color-04, 95);
+    @media (min-width: 800px) {
+        height: auto;
+        padding-bottom: 40px;
+    }
+}
+
+.choix-resto {
+    margin: 0 5%;
+    h2 {
+        padding: 60px 0 15px 0;
+    }
+    a {
+        text-decoration: none;
+        color: $color-04;
+        font-family: $font;
+    }
+    @media (min-width: 800px) {
+        h2 {
+            padding: 40px 0 15px 0;
+        }
+        a {
+            width: 48.5%;
+        }
+    }
+}
+
+.propal-resto {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 800px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.resto {
+    height: 250px;
+    border-radius: 20px;
+    background-color: lighten($color-04, 100);
+    margin: 20px 0 0 0; padding: 0;
+    box-shadow: lighten($color-04, 70) 0 0 10px;
+    &-crop {
+        position: relative;
+        z-index: 1;
+        height: 175px;
+        overflow: hidden;
+        border-radius: 15px 15px 0 0;
+        img {
+            width: 105%;
+            transform: translate(-2%, -25%);
+            @media (min-width: 600px) and (max-width: 799px) {
+                transform: translate(-2%, -35%);
+            }
+            @media (min-width: 1100px) {
+                transform: translate(-2%, -37.5%);
+            }
+        }
+        &-vertical {
+            img {
+                transform: translate(-2%, -37%);
+            }
+        }
+    }
+    &-new {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        justify-content: flex-end;
+        width: 90%;
+        @media (min-width: 800px) {
+            width: 43.5%;
+        }
+        p {
+            margin: 10px;
+            padding: 7px 12.5px;
+            background-color: $color-03;
+            border-radius: 3px;
+            font-family: $font;
+            font-size: 14px;
+            font-weight: 700;
+            color: darken($color-03, 40);
+        }
+    }
+    &-info {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px 0 10px;
+        &-txt {
+            p {
+                margin: 0;
+                padding-top: 5px;
+                font-size: 17px;
+                font-weight: 300;
+            }
+        }
+        &-fav {
+            font-size: 20px;
+            padding-top: 10px;
+        }
+    }
+}

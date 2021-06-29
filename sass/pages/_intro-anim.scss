@@ -1,0 +1,49 @@
+.loading {
+    width: 100%;
+    margin-top: 150px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    &-bar {
+        height: 200px;
+        width: 50px;
+        margin: 0;
+        z-index: 2;
+        transform-origin: bottom;
+        transform: scaleY(0.5);
+        animation: loading-bar $load-dur;
+        animation-fill-mode: both;
+        @for $i from 1 through $num-bars {
+            &-#{$i} {
+                animation-delay: $load-delay * $i;
+            }
+        }
+        &-1 {
+            background-color: $color-01;
+        }
+        &-2 {
+            background-color: $color-02;
+        }
+        &-3 {
+            background-color: $color-03;
+        }
+    }
+    h1 {
+        position: absolute;
+        z-index: 4;
+        margin-top: 210px;
+    }
+}
+
+.app {
+    width: 200px;
+    position: absolute;
+    z-index: 3;
+}
+
+.website {
+    position: absolute;
+    z-index: 5;
+    animation: start 1s $start-delay both;
+}

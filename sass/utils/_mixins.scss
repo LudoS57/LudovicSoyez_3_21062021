@@ -1,0 +1,39 @@
+@mixin bouton {
+    text-decoration: none;
+    font-family: $font;
+    font-weight: 700;
+    color: lighten($color-04, 100);
+    background: linear-gradient(-5deg, $color-01 20%, $color-02);
+    padding: 15px 25px;
+    margin-bottom: 40px;
+    border-radius: 25px;
+    box-shadow: lighten($color-04, 70) 0 5px 10px;
+    &:hover {
+        background: linear-gradient(-5deg, lighten($color-01, 5) 20%, lighten($color-02, 5));
+        box-shadow: lighten($color-04, 60) 0 5px 10px;
+    }
+}
+
+@mixin empty-heart {
+    color: $color-04;
+    position: absolute;
+    z-index: 2;
+    
+    &:hover {
+        opacity: 0;
+        color: $color-01;
+        + .full-heart i {
+            background: linear-gradient(to top, $color-02, $color-01, transparent 50%);
+            background-clip: text;
+            animation: heart 0.75s both;
+            background-size: auto 60px;
+        }
+    }
+}
+
+@mixin full-heart {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    color: transparent;
+}

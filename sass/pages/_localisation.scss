@@ -1,0 +1,24 @@
+.localisation {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(lighten($color-04, 80) 0%, lighten($color-04, 90) 15%);
+    color: lighten($color-04, 20);
+    p {
+        margin: 0;
+        width: 150px;
+    }
+    input {
+        color: lighten($color-04, 20);
+        border: none;
+        background-color: transparent;
+        margin-left: 15px;
+        font-family: $font;
+        font-weight: 400;
+        font-size: 16px;
+        &:focus {
+            outline-style: none;
+        }
+    }
+}
