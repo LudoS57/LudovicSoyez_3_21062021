@@ -133,7 +133,7 @@ footer h4 {
 }
 .empty-heart:hover + .full-heart i {
   background: linear-gradient(to top, #FF79DA, #9356DC, transparent 50%);
-  background-clip: text;
+  -webkit-background-clip: text;
   animation: heart 0.75s both;
   background-size: auto 60px;
 }
@@ -221,7 +221,7 @@ footer h4 {
 .website {
   position: absolute;
   z-index: 5;
-  animation: start 1s 3.8333333333s both;
+  animation: start 1.2s 3.8333333333s both;
 }
 
 #introduction {
