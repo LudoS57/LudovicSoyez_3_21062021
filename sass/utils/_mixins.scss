@@ -24,6 +24,7 @@
         color: $color-01;
         + .full-heart i {
             background: linear-gradient(to top, $color-02, $color-01, transparent 50%);
+            background-clip: text;
             -webkit-background-clip: text;
             animation: heart 0.75s both;
             background-size: auto 60px;

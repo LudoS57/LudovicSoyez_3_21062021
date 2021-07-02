@@ -14,20 +14,13 @@
         transform: scaleY(0.5);
         animation: loading-bar $load-dur;
         animation-fill-mode: both;
-        @for $i from 1 through $num-bars {
-            &-#{$i} {
-                animation-delay: $load-delay * $i;
+        @each $index, $color in $colors {
+            &-#{$index} {
+                animation-delay: $load-delay * $index;
+                background-color: $color;
             }
         }
-        &-1 {
-            background-color: $color-01;
-        }
-        &-2 {
-            background-color: $color-02;
-        }
-        &-3 {
-            background-color: $color-03;
-        }
+        
     }
     h1 {
         position: absolute;
@@ -45,5 +38,5 @@
 .website {
     position: absolute;
     z-index: 5;
-    animation: start 1.2s $start-delay both;
+    animation: start 1s $start-delay both;
 }

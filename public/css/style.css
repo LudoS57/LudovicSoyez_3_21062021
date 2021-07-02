@@ -73,6 +73,11 @@ footer {
     padding-bottom: 40px;
   }
 }
+footer img {
+  height: 18px;
+  padding: 20px 5% 10px 5%;
+  margin: 0;
+}
 footer h4 {
   font-family: shrikhand, cursive;
   font-size: 18px;
@@ -133,6 +138,7 @@ footer h4 {
 }
 .empty-heart:hover + .full-heart i {
   background: linear-gradient(to top, #FF79DA, #9356DC, transparent 50%);
+  background-clip: text;
   -webkit-background-clip: text;
   animation: heart 0.75s both;
   background-size: auto 60px;
@@ -190,20 +196,14 @@ footer h4 {
 }
 .loading-bar-1 {
   animation-delay: 0.8333333333s;
-}
-.loading-bar-2 {
-  animation-delay: 1.6666666667s;
-}
-.loading-bar-3 {
-  animation-delay: 2.5s;
-}
-.loading-bar-1 {
   background-color: #9356DC;
 }
 .loading-bar-2 {
+  animation-delay: 1.6666666667s;
   background-color: #FF79DA;
 }
 .loading-bar-3 {
+  animation-delay: 2.5s;
   background-color: #99E2D0;
 }
 .loading h1 {
@@ -221,7 +221,7 @@ footer h4 {
 .website {
   position: absolute;
   z-index: 5;
-  animation: start 1.2s 3.8333333333s both;
+  animation: start 1s 3.8333333333s both;
 }
 
 #introduction {
