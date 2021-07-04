@@ -15,7 +15,7 @@ footer {
     }
 }
 
-.menu {
+.footer-info {
     padding: 0 5%;
     p {
         margin: 0;
@@ -26,7 +26,7 @@ footer {
         text-decoration: none;
         color: lighten($color-04, 100);
     }
-    &-info {
+    &-bloc {
     display: flex;
     font-weight: 700;
     padding-top: 10px;
