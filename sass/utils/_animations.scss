@@ -1,3 +1,8 @@
+
+/* ---------- ANIMATION CHARGEMENT DU SITE ---------- */
+
+/* ----- BARRE CHARGEMENT DU SITE ----- */
+
 @keyframes loading-bar{
     0% {
         transform: scaleY(0);
@@ -20,6 +25,7 @@
     }
 }
 
+/* ----- APPARITION DU SITE ----- */
 
 @keyframes start{
     0% {
@@ -30,6 +36,10 @@
     }
 }
 
+/* ---------------------------------------------------------------- */
+
+/* ---------- ANIMATION REMPLISSAGE DU COEUR ---------- */
+
 @keyframes heart{
     0% {
         background-position: top;
@@ -37,5 +47,57 @@
 
     100% {
         background-position: bottom;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+
+/* ---------- ANIMATION DU TARIF SÉLECTIONNÉ ---------- */
+
+/* ----- APPARITION BLOC CHECK ----- */
+
+@keyframes choice {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-60px);
+    }
+}
+
+/* ----- ROTATION DU CHECK ----- */
+
+@keyframes turn {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(2turn);
+    }
+}
+
+/* ----- CROP AVEC ... DU TEXTE ----- */
+
+@keyframes txt-space {
+    0% {
+        width: 75%;
+    }
+    100% {
+        width: 65%;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+
+/* ---------- APPARITION CHOIX MENU ---------- */
+
+@keyframes bloc-start {
+    0% {
+        opacity: 0;
+        margin-top: 25px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 15px;
     }
 }

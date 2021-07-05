@@ -1,3 +1,24 @@
+@charset "UTF-8";
+/* ---------- COULEURS ---------- */
+/* ----- COULEURS DU SITE ----- */
+/* ----- PERMET DE COLORER LES BARRES DE CHARGEMENT ----- */
+/* ---------------------------------------------------------------- */
+/* ---------- TYPOGRAPHIE ---------- */
+/* ---------------------------------------------------------------- */
+/* ---------- VARIABLES POUR APPARITION SITE WEB ---------- */
+/* ---------------------------------------------------------------- */
+/* ---------- VARIABLES POUR APPARITION CHOIX MENU ---------- */
+/* ---------- BOUTON ---------- */
+/* ---------------------------------------------------------------- */
+/* ---------- FAVORIS OR NOT FAVORIS ---------- */
+/* ----- PAS FAVORIS ----- */
+/* ----- PAS FAVORIS ----- */
+/* ---------------------------------------------------------------- */
+/* ---------- CHOIX D'UN(E) ENTRÉE / PLAT / DESSERT ---------- */
+/* ---------------------------------------------------------------- */
+/* ---------- APPARITION DES CHOIX MENU ---------- */
+/* ---------- ANIMATION CHARGEMENT DU SITE ---------- */
+/* ----- BARRE CHARGEMENT DU SITE ----- */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 @keyframes loading-bar {
@@ -21,6 +42,7 @@
     transform: scaleY(1);
   }
 }
+/* ----- APPARITION DU SITE ----- */
 @keyframes start {
   0% {
     transform: translateX(-9999px);
@@ -29,12 +51,55 @@
     transform: translateX(0);
   }
 }
+/* ---------------------------------------------------------------- */
+/* ---------- ANIMATION REMPLISSAGE DU COEUR ---------- */
 @keyframes heart {
   0% {
     background-position: top;
   }
   100% {
     background-position: bottom;
+  }
+}
+/* ---------------------------------------------------------------- */
+/* ---------- ANIMATION DU TARIF SÉLECTIONNÉ ---------- */
+/* ----- APPARITION BLOC CHECK ----- */
+@keyframes choice {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-60px);
+  }
+}
+/* ----- ROTATION DU CHECK ----- */
+@keyframes turn {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(2turn);
+  }
+}
+/* ----- CROP AVEC ... DU TEXTE ----- */
+@keyframes txt-space {
+  0% {
+    width: 75%;
+  }
+  100% {
+    width: 65%;
+  }
+}
+/* ---------------------------------------------------------------- */
+/* ---------- APPARITION CHOIX MENU ---------- */
+@keyframes bloc-start {
+  0% {
+    opacity: 0;
+    margin-top: 25px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 15px;
   }
 }
 h1 {
@@ -58,6 +123,32 @@ h3 {
   margin: 0;
   font-size: 18px;
   font-weight: 700;
+}
+
+h4 {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 40px 0 5px 2%;
+}
+
+/* ---------- ÉLÉMENT QUI PERMET DE SOULIGNER H4 ---------- */
+.underline {
+  height: 3px;
+  width: 40px;
+  background-color: #99E2D0;
+  margin: 0 0 0 2%;
+}
+
+/* -------------------------------------------------------- */
+h5 {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
 }
 
 footer {
@@ -121,6 +212,7 @@ footer img {
   margin: 0;
 }
 
+/* ---------- CLASSES POUR ANIM FAVORIS ---------- */
 .empty-heart {
   color: #000000;
   position: absolute;
@@ -145,6 +237,21 @@ footer img {
   color: transparent;
 }
 
+header {
+  position: relative;
+}
+header a {
+  position: absolute;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+  font-size: 20px;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* ---------- BLOC LOCALISATION PAGE D'ACCUEIL ---------- */
 .localisation {
   height: 50px;
   display: flex;
@@ -170,6 +277,8 @@ footer img {
   outline-style: none;
 }
 
+/* ---------- ANIMATION INTRO ---------- */
+/* ----- BARRES DE COULEUR DERRIÈRE APP + LOGO ----- */
 .loading {
   width: 100%;
   margin-top: 150px;
@@ -185,8 +294,7 @@ footer img {
   z-index: 2;
   transform-origin: bottom;
   transform: scaleY(0.5);
-  animation: loading-bar 2.5s;
-  animation-fill-mode: both;
+  animation: loading-bar 2.5s both;
 }
 .loading-bar-1 {
   animation-delay: 0.8333333333s;
@@ -206,18 +314,21 @@ footer img {
   margin-top: 210px;
 }
 
+/* ----- SVG DE L'APPLI ----- */
 .app {
   width: 200px;
   position: absolute;
   z-index: 3;
 }
 
+/* ----- CONTENU DE LA PAGE D'ACCEUIL ----- */
 .website {
   position: absolute;
   z-index: 5;
   animation: start 1s 3.8333333333s both;
 }
 
+/* ---------- BLOC INTRODUCTION PAGE D'ACCUEIL ---------- */
 #introduction {
   height: 285px;
   background-color: #f2f2f2;
@@ -256,6 +367,8 @@ footer img {
   box-shadow: #999999 0 5px 10px;
 }
 
+/* ---------- BLOC FONCTIONNEMENT PAGE D'ACCUEIL ---------- */
+/* ----- TITRE ----- */
 #fonctionnement {
   height: 440px;
   margin: 0 5%;
@@ -275,6 +388,7 @@ footer img {
   }
 }
 
+/* ----- ÉTAPES DU FONCTIONNEMENT ----- */
 .step {
   display: flex;
   align-items: center;
@@ -344,6 +458,7 @@ footer img {
   }
 }
 
+/* ---------- BLOC AVEC LES RESTAURANTS PAGE D'ACCUEIL ---------- */
 #restaurants {
   height: 1230px;
   background-color: #f2f2f2;
@@ -355,6 +470,7 @@ footer img {
   }
 }
 
+/* ----- BLOC TITRE + PROPOSITION RESTO ----- */
 .choix-resto {
   margin: 0 5%;
 }
@@ -374,7 +490,13 @@ footer img {
     width: 48.5%;
   }
 }
+@media (min-width: 800px) and (min-width: 1200px) {
+  .choix-resto a {
+    width: 30%;
+  }
+}
 
+/* ----- PROPOSITION DE RESTO ----- */
 .propal-resto {
   display: flex;
   flex-direction: column;
@@ -387,6 +509,7 @@ footer img {
   }
 }
 
+/* ----- VIGNETTE RESTO ----- */
 .resto {
   height: 250px;
   border-radius: 20px;
@@ -416,10 +539,16 @@ footer img {
     transform: translate(-2%, -37.5%);
   }
 }
+@media (min-width: 1200px) {
+  .resto-crop img {
+    transform: translate(-2%, -20%);
+  }
+}
 .resto-crop-vertical img {
   transform: translate(-2%, -37%);
 }
 .resto-new {
+  /* ----- BLOC POUR LES NOUVEAUX RESTO ----- */
   position: absolute;
   z-index: 2;
   display: flex;
@@ -429,6 +558,11 @@ footer img {
 @media (min-width: 800px) {
   .resto-new {
     width: 43.5%;
+  }
+}
+@media (min-width: 1200px) {
+  .resto-new {
+    width: 27%;
   }
 }
 .resto-new p {
@@ -457,16 +591,7 @@ footer img {
   padding-top: 10px;
 }
 
-header a {
-  height: 44px;
-  display: flex;
-  align-items: center;
-  margin-left: 10%;
-  font-size: 20px;
-  color: #333333;
-  text-decoration: none;
-}
-
+/* ---------- PHOTO RESTO POUR MENU ---------- */
 .photo-resto {
   height: 265px;
   overflow: hidden;
@@ -475,37 +600,40 @@ header a {
   width: 110%;
   transform: translate(-5%, 0%);
 }
-
-h4 {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  color: #000000;
-  text-transform: uppercase;
-  margin: 40px 0 5px 2%;
+@media (min-width: 500px) and (max-width: 799px) {
+  .photo-resto img {
+    transform: translate(-2%, -30%);
+  }
+}
+@media (min-width: 800px) {
+  .photo-resto img {
+    transform: translate(-2%, -40%);
+  }
 }
 
-h5 {
-  font-family: Roboto, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #000000;
-  margin: 0;
-}
-
-.underline {
-  height: 3px;
-  width: 40px;
-  background-color: #99E2D0;
-  margin: 0 0 0 2%;
-}
-
+/* ---------- MENU DU RESTO ---------- */
 .menu {
+  position: relative;
+  z-index: 2;
   height: 1200px;
   background-color: #f2f2f2;
   border-radius: 35px 35px 0 0;
+  margin-top: -40px;
+}
+.menu .menu-partie-bloc {
+  animation: bloc-start 1s both;
+}
+.menu .menu-partie-bloc01 {
+  animation-delay: 0.25s;
+}
+.menu .menu-partie-bloc02 {
+  animation-delay: 0.5s;
+}
+.menu .menu-partie-bloc03 {
+  animation-delay: 0.75s;
 }
 .menu-nom {
+  /* ---------- ENTRÉES / PLATS / DESSERTS ---------- */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -516,6 +644,7 @@ h5 {
   margin: 0;
 }
 .menu-partie {
+  /* ---------- GROUPE ENTRÉES / PLATS / DESSERTS ---------- */
   margin: 0 3%;
 }
 .menu-partie-bloc {
@@ -527,8 +656,8 @@ h5 {
   background-color: white;
   padding: 10px 12px;
   border-radius: 15px;
-  margin-top: 15px;
   overflow: hidden;
+  box-shadow: #cccccc 0 0 10px;
 }
 .menu-partie-bloc-txt {
   width: 75%;
@@ -542,12 +671,14 @@ h5 {
   color: #000000;
 }
 .menu-partie-bloc-txt > * {
+  /* ---------- PERMET AUX TEXTES DE SE CONTRACTER AVEC ... ---------- */
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .menu-partie-bloc .tarif {
+  /* ---------- BLOC PRIX AVEC ANIMATION ---------- */
   position: absolute;
   z-index: 2;
   width: calc(100% + 60px);
@@ -557,11 +688,11 @@ h5 {
   margin-left: -12px;
 }
 .menu-partie-bloc .tarif-prix {
-  margin: 27.5px 25px 0 0;
+  margin: 27.5px 20px 0 0;
   font-family: Roboto, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  color: #000000;
+  color: #4d4d4d;
 }
 .menu-partie-bloc .tarif-check {
   display: flex;
@@ -576,10 +707,13 @@ h5 {
   border-radius: 0 15px 15px 0;
 }
 .menu-partie-bloc:hover .menu-partie-bloc-txt {
-  width: 60%;
+  animation: txt-space 0.5s both;
 }
 .menu-partie-bloc:hover .tarif {
-  width: 100%;
+  animation: choice 0.5s both;
+}
+.menu-partie-bloc:hover .tarif i {
+  animation: turn 0.5s both;
 }
 .menu a {
   text-decoration: none;
@@ -591,10 +725,56 @@ h5 {
   margin-bottom: 40px;
   border-radius: 25px;
   box-shadow: #b3b3b3 0 5px 10px;
+  display: flex;
+  justify-content: center;
+  width: 185px;
+  margin: 50px auto;
 }
 .menu a:hover {
   background: linear-gradient(-5deg, #a16be0 20%, #ff93e1);
   box-shadow: #999999 0 5px 10px;
+}
+@media (min-width: 800px) {
+  .menu {
+    /* ---------- MODIF À 800 DE LARGE ---------- */
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .menu-partie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .menu-partie-titre {
+    width: 100%;
+  }
+  .menu-partie-bloc {
+    width: 45%;
+  }
+  .menu a {
+    margin: 60px auto;
+  }
+}
+@media (min-width: 1200px) {
+  .menu {
+    /* ---------- MODIF À 1200 DE LARGE ---------- */
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .menu-partie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .menu-partie-titre {
+    width: 100%;
+  }
+  .menu-partie-bloc {
+    width: 30%;
+  }
+  .menu a {
+    margin: 60px auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

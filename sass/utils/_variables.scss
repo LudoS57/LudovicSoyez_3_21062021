@@ -1,14 +1,38 @@
+
+/* ---------- COULEURS ---------- */
+
+/* ----- COULEURS DU SITE ----- */
+
 $color-01: #9356DC;
 $color-02: #FF79DA;
 $color-03: #99E2D0;
 $color-04: #000000;
 
+
+/* ----- PERMET DE COLORER LES BARRES DE CHARGEMENT ----- */
+
 $colors: (1: $color-01, 2: $color-02, 3: $color-03);
+
+/* ---------------------------------------------------------------- */
+
+/* ---------- TYPOGRAPHIE ---------- */
 
 $font-logo: shrikhand, cursive;
 $font: Roboto, sans-serif;
+
+/* ---------------------------------------------------------------- */
+
+/* ---------- VARIABLES POUR APPARITION SITE WEB ---------- */
 
 $load-dur: 2.5s;
 $num-bars: 3;
 $load-delay: math.div($load-dur, $num-bars);
 $start-delay: $load-dur + $load-delay + 0.5s;
+
+/* ---------------------------------------------------------------- */
+
+/* ---------- VARIABLES POUR APPARITION CHOIX MENU ---------- */
+
+$apparition-dur: 1s;
+$num-choice: 4;
+$apparition-delay: math.div($apparition-dur, $num-choice);

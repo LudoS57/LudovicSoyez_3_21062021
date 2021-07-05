@@ -1,3 +1,8 @@
+
+/* ---------- ANIMATION INTRO ---------- */
+
+/* ----- BARRES DE COULEUR DERRIÈRE APP + LOGO ----- */
+
 .loading {
     width: 100%;
     margin-top: 150px;
@@ -12,8 +17,7 @@
         z-index: 2;
         transform-origin: bottom;
         transform: scaleY(0.5);
-        animation: loading-bar $load-dur;
-        animation-fill-mode: both;
+        animation: loading-bar $load-dur both;
         @each $index, $color in $colors {
             &-#{$index} {
                 animation-delay: $load-delay * $index;
@@ -29,11 +33,15 @@
     }
 }
 
+/* ----- SVG DE L'APPLI ----- */
+
 .app {
     width: 200px;
     position: absolute;
     z-index: 3;
 }
+
+/* ----- CONTENU DE LA PAGE D'ACCEUIL ----- */
 
 .website {
     position: absolute;

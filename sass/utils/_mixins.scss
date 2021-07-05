@@ -1,3 +1,6 @@
+
+/* ---------- BOUTON ---------- */
+
 @mixin bouton {
     text-decoration: none;
     font-family: $font;
@@ -13,6 +16,12 @@
         box-shadow: lighten($color-04, 60) 0 5px 10px;
     }
 }
+
+/* ---------------------------------------------------------------- */
+
+/* ---------- FAVORIS OR NOT FAVORIS ---------- */
+
+/* ----- PAS FAVORIS ----- */
 
 @mixin empty-heart {
     color: $color-04;
@@ -32,9 +41,42 @@
     }
 }
 
+/* ----- PAS FAVORIS ----- */
+
 @mixin full-heart {
     position: relative;
     z-index: 1;
     opacity: 1;
     color: transparent;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* ---------- CHOIX D'UN(E) ENTRÉE / PLAT / DESSERT ---------- */
+
+@mixin choice-mov {
+    .menu-partie-bloc-txt {
+        animation: txt-space 0.5s both;
+    }
+    .tarif {
+        animation: choice 0.5s both;
+        i {
+            animation: turn 0.5s both;
+        }
+    }
+}
+
+/* ---------------------------------------------------------------- */
+
+/* ---------- APPARITION DES CHOIX MENU ---------- */
+
+@mixin apparition-bloc {
+    .menu-partie-bloc {
+        animation: bloc-start $apparition-dur both;
+        @for $i from 1 to $num-choice {
+            &0#{$i} {
+                animation-delay: $apparition-delay * $i;
+            }
+        }
+    }
 }

@@ -1,0 +1,13 @@
+header {
+    position: relative;
+    a {
+        position: absolute;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+        font-size: 20px;
+        color: lighten($color-04, 20);
+        text-decoration: none;
+    }
+}
