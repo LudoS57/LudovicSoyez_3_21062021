@@ -64,7 +64,7 @@
 /* ---------------------------------------------------------------- */
 /* ---------- ANIMATION DU TARIF SÉLECTIONNÉ ---------- */
 /* ----- APPARITION BLOC CHECK ----- */
-@keyframes choice {
+@keyframes choice-in {
   0% {
     transform: translateX(0);
   }
@@ -72,8 +72,16 @@
     transform: translateX(-60px);
   }
 }
+@keyframes choice-out {
+  0% {
+    transform: translateX(-60px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 /* ----- ROTATION DU CHECK ----- */
-@keyframes turn {
+@keyframes turn-in {
   0% {
     transform: rotate(0);
   }
@@ -82,12 +90,20 @@
   }
 }
 /* ----- CROP AVEC ... DU TEXTE ----- */
-@keyframes txt-space {
+@keyframes txt-space-in {
   0% {
     width: 82%;
   }
   100% {
     width: 65%;
+  }
+}
+@keyframes txt-space-out {
+  0% {
+    width: 65%;
+  }
+  100% {
+    width: 82%;
   }
 }
 /* ---------------------------------------------------------------- */
@@ -678,6 +694,12 @@ header a {
   overflow: hidden;
   box-shadow: #cccccc 0 0 10px;
 }
+.menu-partie-bloc .menu-partie-bloc-txt {
+  animation: txt-space-out 0.5s forwards;
+}
+.menu-partie-bloc .tarif {
+  animation: choice-out 0.5s forwards;
+}
 .menu-partie-bloc-txt {
   width: 83%;
 }
@@ -726,13 +748,13 @@ header a {
   border-radius: 0 15px 15px 0;
 }
 .menu-partie-bloc:hover .menu-partie-bloc-txt {
-  animation: txt-space 0.5s both;
+  animation: txt-space-in 0.5s forwards;
 }
 .menu-partie-bloc:hover .tarif {
-  animation: choice 0.5s both;
+  animation: choice-in 0.5s forwards;
 }
 .menu-partie-bloc:hover .tarif i {
-  animation: turn 0.5s both;
+  animation: turn-in 0.5s forwards;
 }
 .menu a {
   text-decoration: none;

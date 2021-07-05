@@ -54,15 +54,24 @@
 
 /* ---------- CHOIX D'UN(E) ENTRÉE / PLAT / DESSERT ---------- */
 
-@mixin choice-mov {
+@mixin choice-mov-in {
     .menu-partie-bloc-txt {
-        animation: txt-space 0.5s both;
+        animation: txt-space-in 0.5s forwards;
     }
     .tarif {
-        animation: choice 0.5s both;
+        animation: choice-in 0.5s forwards;
         i {
-            animation: turn 0.5s both;
+            animation: turn-in 0.5s forwards;
         }
+    }
+}
+
+@mixin choice-mov-out {
+    .menu-partie-bloc-txt {
+        animation: txt-space-out 0.5s forwards;
+    }
+    .tarif {
+        animation: choice-out 0.5s forwards;
     }
 }
 

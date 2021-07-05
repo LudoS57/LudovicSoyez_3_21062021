@@ -60,6 +60,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: lighten($color-04, 80) 0 0 10px;
+            @include choice-mov-out;
             &-txt {
                 width: 83%;
                 p {
@@ -106,7 +107,7 @@
                 }
             }
             &:hover {
-                @include choice-mov;
+                @include choice-mov-in;
             }
         }
     }
