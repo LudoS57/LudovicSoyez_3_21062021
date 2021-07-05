@@ -34,5 +34,5 @@ $start-delay: $load-dur + $load-delay + 0.5s;
 /* ---------- VARIABLES POUR APPARITION CHOIX MENU ---------- */
 
 $apparition-dur: 1s;
-$num-choice: 4;
+$num-choice: 5;
 $apparition-delay: math.div($apparition-dur, $num-choice);

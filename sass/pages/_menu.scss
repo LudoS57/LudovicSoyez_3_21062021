@@ -14,6 +14,16 @@
             transform: translate(-2%, -40%);
         }
     }
+    &-vertical img { /* ----- VARIANTE POUR PHOTO VERTICALE ----- */
+        width: 100%;
+        transform: translate(0%, -20%);
+        @media (min-width: 500px) and (max-width: 799px) {
+            transform: translate(0%, -40%);
+        }
+        @media (min-width: 800px) {
+            transform: translate(0%, -45%);
+        }
+    }
 }
 
 /* ---------- MENU DU RESTO ---------- */
@@ -33,6 +43,7 @@
         margin: 0 10% 0 5%;
         padding-top: 30px;
         h1 {
+            font-size: 28px;
             margin: 0;
         }
     }
@@ -50,7 +61,7 @@
             overflow: hidden;
             box-shadow: lighten($color-04, 80) 0 0 10px;
             &-txt {
-                width: 75%;
+                width: 83%;
                 p {
                     margin: 0;
                     padding-top: 5px;
