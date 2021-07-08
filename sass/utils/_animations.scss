@@ -58,19 +58,19 @@
 
 @keyframes choice-in {
     0% {
-        transform: translateX(0);
+        transform: translateX(1px);
     }
     100% {
-        transform: translateX(-60px);
+        transform: translateX(-59px);
     }
 }
 
 @keyframes choice-out {
     0% {
-        transform: translateX(-60px);
+        transform: translateX(-59px);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(1px);
     }
 }
 
