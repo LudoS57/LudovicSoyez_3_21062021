@@ -4,7 +4,7 @@ footer {
     font-family: $font;
     font-size: 16px;
     color: lighten($color-04, 100);
-    @media (min-width: 800px) {
+    @media (min-width: $ipad) {
         height: auto;
         padding-bottom: 40px;
     }
@@ -16,13 +16,12 @@ footer {
 }
 
 .footer-info {
+    display: flex;
+    flex-direction: column;
     padding: 0 5%;
-    p {
-        margin: 0;
-        padding: 10px 0;
-    }
     a {
         margin: 0;
+        padding-top: 10px;
         text-decoration: none;
         color: lighten($color-04, 100);
     }
@@ -30,15 +29,15 @@ footer {
     display: flex;
     font-weight: 700;
     padding-top: 10px;
-    p {
-        padding: 0;
+    a {
+        padding-top: 0;
     }
     i {
         width: 20px;
         padding-right: 10px;
     }
     }
-    @media (min-width: 800px) {
+    @media (min-width: $ipad) {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

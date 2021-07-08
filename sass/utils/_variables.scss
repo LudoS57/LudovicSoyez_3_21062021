@@ -36,3 +36,10 @@ $start-delay: $load-dur + $load-delay + 0.5s;
 $apparition-dur: 1s;
 $num-choice: 5;
 $apparition-delay: math.div($apparition-dur, $num-choice);
+
+/* ---------------------------------------------------------------- */
+
+/* ---------- VARIABLES POUR TAILLE ÉCRAN ---------- */
+
+$ipad: 768px;
+$desktop: 1024px;
