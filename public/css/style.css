@@ -21,8 +21,6 @@
 /* ---------- APPARITION DES CHOIX MENU ---------- */
 /* ---------- ANIMATION CHARGEMENT DU SITE ---------- */
 /* ----- BARRE CHARGEMENT DU SITE ----- */
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 @keyframes loading-bar {
   0% {
     transform: scaleY(0);
