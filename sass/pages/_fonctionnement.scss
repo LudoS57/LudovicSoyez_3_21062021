@@ -19,6 +19,10 @@
             padding: 40px 0 10px 0;
         }
     }
+    @media (min-width: $big-screen) {
+        margin: 0 auto;
+        max-width: 1400px;
+    }
 }
 
 /* ----- ÉTAPES DU FONCTIONNEMENT ----- */

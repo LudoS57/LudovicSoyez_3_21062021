@@ -42,6 +42,10 @@
         align-items: center;
         margin: 0 10% 0 5%;
         padding-top: 30px;
+        @media (min-width: $big-screen) {
+            margin: 0 auto;
+            max-width: 1400px;
+        }
         h1 {
             font-size: 28px;
             margin: 0;
@@ -49,6 +53,10 @@
     }
     &-partie { /* ---------- GROUPE ENTRÉES / PLATS / DESSERTS ---------- */
         margin: 0 3%;
+        @media (min-width: $big-screen) {
+            margin: 0 auto;
+            max-width: 1400px;
+        }
         &-bloc {
             position: relative;
             z-index: 1;

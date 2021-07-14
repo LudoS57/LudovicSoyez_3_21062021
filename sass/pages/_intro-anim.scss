@@ -5,7 +5,8 @@
 
 .loading {
     width: 100%;
-    margin-top: 150px;
+    //max-width: 1400px;
+    margin: 150px auto 0 auto;
     position: absolute;
     z-index: 1;
     display: flex;
@@ -47,4 +48,5 @@
     position: absolute;
     z-index: 5;
     animation: start 1s $start-delay both;
+    width: 100%;
 }

@@ -28,6 +28,9 @@ h4 {
     color: $color-04;
     text-transform: uppercase;
     margin: 40px 0 5px 2%;
+    @media (min-width: $big-screen) {
+        margin: 40px 0 5px 0;
+    }
 }
 
 /* ---------- ÉLÉMENT QUI PERMET DE SOULIGNER H4 ---------- */
@@ -37,6 +40,9 @@ h4 {
     width: 40px;
     background-color: $color-03;
     margin: 0 0 0 2%;
+    @media (min-width: $big-screen) {
+        margin: 0;
+    }
 }
 
 /* -------------------------------------------------------- */

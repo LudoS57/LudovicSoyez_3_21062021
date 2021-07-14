@@ -12,6 +12,16 @@ footer {
         height: 18px;
         padding: 20px 5% 10px 5%;
         margin: 0;
+        @media (min-width: $big-screen) {
+            padding: 20px 0 10px 0;
+        }
+    }
+}
+
+.footer-contenu {
+    @media (min-width: $big-screen) {
+        margin: 0 auto;
+        max-width: 1400px;
     }
 }
 
@@ -19,6 +29,9 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 0 5%;
+    @media (min-width: $big-screen) {
+        padding: 0;
+    }
     a {
         margin: 0;
         padding-top: 10px;

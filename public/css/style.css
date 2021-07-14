@@ -149,6 +149,11 @@ h4 {
   text-transform: uppercase;
   margin: 40px 0 5px 2%;
 }
+@media (min-width: 1401px) {
+  h4 {
+    margin: 40px 0 5px 0;
+  }
+}
 
 /* ---------- ÉLÉMENT QUI PERMET DE SOULIGNER H4 ---------- */
 .underline {
@@ -156,6 +161,11 @@ h4 {
   width: 40px;
   background-color: #99E2D0;
   margin: 0 0 0 2%;
+}
+@media (min-width: 1401px) {
+  .underline {
+    margin: 0;
+  }
 }
 
 /* -------------------------------------------------------- */
@@ -185,11 +195,28 @@ footer img {
   padding: 20px 5% 10px 5%;
   margin: 0;
 }
+@media (min-width: 1401px) {
+  footer img {
+    padding: 20px 0 10px 0;
+  }
+}
+
+@media (min-width: 1401px) {
+  .footer-contenu {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+}
 
 .footer-info {
   display: flex;
   flex-direction: column;
   padding: 0 5%;
+}
+@media (min-width: 1401px) {
+  .footer-info {
+    padding: 0;
+  }
 }
 .footer-info a {
   margin: 0;
@@ -223,8 +250,7 @@ footer img {
 }
 
 .ohmyfood {
-  width: 100%;
-  margin: 0;
+  margin: 0 auto;
 }
 
 /* ---------- CLASSES POUR ANIM FAVORIS ---------- */
@@ -265,9 +291,16 @@ header a {
   color: #333333;
   text-decoration: none;
 }
+@media (min-width: 1401px) {
+  header {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+}
 
 /* ---------- BLOC LOCALISATION PAGE D'ACCUEIL ---------- */
 .localisation {
+  width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -296,7 +329,7 @@ header a {
 /* ----- BARRES DE COULEUR DERRIÈRE APP + LOGO ----- */
 .loading {
   width: 100%;
-  margin-top: 150px;
+  margin: 150px auto 0 auto;
   position: absolute;
   z-index: 1;
   display: flex;
@@ -341,6 +374,7 @@ header a {
   position: absolute;
   z-index: 5;
   animation: start 1s 3.8333333333s both;
+  width: 100%;
 }
 
 /* ---------- BLOC INTRODUCTION PAGE D'ACCUEIL ---------- */
@@ -400,6 +434,12 @@ header a {
   #fonctionnement h2 {
     position: absolute;
     padding: 40px 0 10px 0;
+  }
+}
+@media (min-width: 1401px) {
+  #fonctionnement {
+    margin: 0 auto;
+    max-width: 1400px;
   }
 }
 
@@ -508,6 +548,12 @@ header a {
 @media (min-width: 768px) and (min-width: 1024px) {
   .choix-resto a {
     width: 30%;
+  }
+}
+@media (min-width: 1401px) {
+  .choix-resto {
+    margin: 0 auto;
+    max-width: 1400px;
   }
 }
 
@@ -668,6 +714,12 @@ header a {
   margin: 0 10% 0 5%;
   padding-top: 30px;
 }
+@media (min-width: 1401px) {
+  .menu-nom {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+}
 .menu-nom h1 {
   font-size: 28px;
   margin: 0;
@@ -675,6 +727,12 @@ header a {
 .menu-partie {
   /* ---------- GROUPE ENTRÉES / PLATS / DESSERTS ---------- */
   margin: 0 3%;
+}
+@media (min-width: 1401px) {
+  .menu-partie {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
 }
 .menu-partie-bloc {
   position: relative;

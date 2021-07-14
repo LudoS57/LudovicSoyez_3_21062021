@@ -10,4 +10,8 @@ header {
         color: lighten($color-04, 20);
         text-decoration: none;
     }
+    @media (min-width: $big-screen) {
+        margin: 0 auto;
+        max-width: 1400px;
+    }
 }
